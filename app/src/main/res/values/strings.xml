@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="home_title">Weather</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fav_blank_fragment">Fav blank fragment</string>
+    <string name="set_blank_fragment">Setting blank fragment</string>
+    <string name="first_blank_fragment">first fragment</string>
+
+
+</resources>

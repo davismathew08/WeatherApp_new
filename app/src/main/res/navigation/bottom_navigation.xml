@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.weatherappkotlin.ui.main.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_cityDetailsFragment"
+            app:destination="@id/cityDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.weatherappkotlin.ui.main.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/favsFragment"
+        android:name="com.example.weatherappkotlin.ui.main.FavouritesFragment"
+        android:label="FavouritesFragment" />
+    <fragment
+        android:id="@+id/cityDetailsFragment"
+        android:name="com.example.weatherappkotlin.ui.main.city.CityDetailsFragment"
+        android:label="CityDetails">
+
+        <argument
+            android:name="lat"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="lon"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+</navigation>
