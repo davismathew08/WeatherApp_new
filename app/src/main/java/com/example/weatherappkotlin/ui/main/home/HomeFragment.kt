@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.lottie.model.Marker
 import com.example.weatherappkotlin.R
 import com.example.weatherappkotlin.dialogs.CustomProgressDialog
 import com.example.weatherappkotlin.model.location_details.AddLocationDetails
@@ -118,6 +119,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private fun functionDelete(position: Int) {
         locationDetails?.removeAt(position)
         selectedLocationsAdapter.notifyDataSetChanged()
+        if(locationDetails!!.size==0){
+            mMap.clear()
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -141,6 +145,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                     Toast.makeText(requireContext(),"Some issue in fetching location, please pin location again", Toast.LENGTH_LONG).show()
                 }
                 else{
+                    mMap.clear()
                     mMap.addMarker(MarkerOptions().position(location).title(locationName))
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 14f))
                     homeViewModel.fetchAgentAssignedPropertyList(tapLocation.latitude.toString(),
