@@ -25,9 +25,9 @@ object AppPreferences {
         set(value) = preferences.edit {
             it.putString(ConstantPreference.LANGUAGE, value!!)
         }
-    var bookmarkedDetails: String?
-        get() = preferences.getString(ConstantPreference.BOOKMARKED, "")
+    var isFirstTime: Boolean
+        get() = preferences.getBoolean(ConstantPreference.IS_FIRST_TIME,true)
         set(value) = preferences.edit {
-            it.putString(ConstantPreference.BOOKMARKED, value!!)
+            it.putBoolean(ConstantPreference.IS_FIRST_TIME,value)
         }
 }
