@@ -13,7 +13,8 @@ import java.util.ArrayList
 
 
 class SelectedLocationsAdapter(private var locationDetailsList: ArrayList<AddLocationDetails>,
-                               val onItemDeleteClicked: (Int) -> Unit, val onItemSelected:(Int)->Unit) : RecyclerView.Adapter<SelectedLocationsAdapter.ViewHold>()
+                               val onItemDeleteClicked: (Int) -> Unit, val onItemSelected:(Int)->Unit,
+val onItemBooked:(Int)->Unit,val onItemRemove:(Int)->Unit) : RecyclerView.Adapter<SelectedLocationsAdapter.ViewHold>()
 {
     private var selectedPosition : Int = 0
     private var context: Context? = null
@@ -39,6 +40,9 @@ class SelectedLocationsAdapter(private var locationDetailsList: ArrayList<AddLoc
     {
         if(locationDetailsList.size>0){
             holder.itemView.tvSelectedLocationName.text=locationDetailsList[position].location_name
+            if(locationDetailsList[position].bookedmarked){
+                holder.itemView.ivBookmarked.visibility=View.VISIBLE
+            }
         }
         holder.itemView.ivDelete.setOnClickListener {
             onItemDeleteClicked.invoke(position)
@@ -47,11 +51,13 @@ class SelectedLocationsAdapter(private var locationDetailsList: ArrayList<AddLoc
             locationDetailsList[position].bookedmarked=true
             holder.itemView.ivOutlinedBookmark.visibility=View.GONE
             holder.itemView.ivBookmarked.visibility=View.VISIBLE
+            onItemBooked.invoke(position)
         }
         holder.itemView.ivBookmarked.setOnClickListener {
             locationDetailsList[position].bookedmarked=false
             holder.itemView.ivOutlinedBookmark.visibility=View.VISIBLE
             holder.itemView.ivBookmarked.visibility=View.GONE
+            onItemRemove.invoke(position)
         }
         holder.itemView.setOnClickListener {
             if(locationDetailsList[position].bookedmarked){

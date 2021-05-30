@@ -15,6 +15,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/constraintMain">
 
+        <ImageView
+            android:id="@+id/ivMapIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_map_pin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/margin_5dp"/>
+
         <TextView
             android:id="@+id/tvSelectedLocationName"
             android:layout_width="0dp"
@@ -26,7 +36,7 @@
             android:textColor="@color/black_gray"
             android:textSize="@dimen/text_size_16sp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivMapIcon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ivDelete"
             android:layout_marginEnd="@dimen/margin_34dp"

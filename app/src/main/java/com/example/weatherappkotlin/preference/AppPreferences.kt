@@ -25,4 +25,9 @@ object AppPreferences {
         set(value) = preferences.edit {
             it.putString(ConstantPreference.LANGUAGE, value!!)
         }
+    var bookmarkedDetails: String?
+        get() = preferences.getString(ConstantPreference.BOOKMARKED, "")
+        set(value) = preferences.edit {
+            it.putString(ConstantPreference.BOOKMARKED, value!!)
+        }
 }

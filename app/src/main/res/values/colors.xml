@@ -68,5 +68,9 @@
     <color name="color_accent_red_dark">#FB0007</color>
     <color name="color_accent_green">#6AC58C</color>
     <color name="color_accent_red">#F47458</color>
+    <color name="night_background">#0B1B25</color>
+    <color name="morning_background">#FFFFFF</color>
+    <color name="rainy_background">#95A3B0</color>
+    <color name="gree_snow">#40C075</color>
 
 </resources>

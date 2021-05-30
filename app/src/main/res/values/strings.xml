@@ -6,6 +6,13 @@
     <string name="fav_blank_fragment">Fav blank fragment</string>
     <string name="set_blank_fragment">Setting blank fragment</string>
     <string name="first_blank_fragment">first fragment</string>
+    <string name="tvTemperatureTitle">Temperature :</string>
+    <string name="tvHumidityValue">66%</string>
+    <string name="tvHumidityTitle">Humidity :</string>
+    <string name="tvWindValue">1.29 m/s</string>
+    <string name="tvWindTitle">Wind :</string>
+    <string name="tvLocationNameTitle">Location :</string>
+    <string name="tvRainTitle">Rain Chance :</string>
 
 
 </resources>

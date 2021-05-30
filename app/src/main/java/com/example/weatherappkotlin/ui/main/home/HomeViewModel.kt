@@ -13,7 +13,7 @@ class HomeViewModel:ViewModel() {
     private val selectedLocationDetailsResponseLiveData=
             MutableLiveData<Resource<SelectedLocationResponse>>()
 
-    fun fetchAgentAssignedPropertyList(lat : String,lon : String,appid : String){
+    fun fetchDetails(lat : String, lon : String, appid : String){
         val repository= ApiRepositoryProvider.providerApiRepository()
         viewModelScope.launch {
             selectedLocationDetailsResponseLiveData.postValue(Resource.loading(null))

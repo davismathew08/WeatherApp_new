@@ -2,6 +2,7 @@ package com.example.weatherappkotlin.data.api
 
 import com.androidnetworking.interceptors.HttpLoggingInterceptor
 import com.example.weatherappkotlin.model.location_details.SelectedLocationResponse
+import com.example.weatherappkotlin.model.place_weather_details.PlaceWeatherDetails
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -17,6 +18,11 @@ interface ApiService {
                                   @Query("appid") appid : String) :
             Response<SelectedLocationResponse>
 
+    @GET("weather")
+    suspend fun getPlaceWeatherDetails(@Query("lat") lat : String,
+                                  @Query("lon") lon : String,
+                                  @Query("appid") appid : String) :
+            Response<PlaceWeatherDetails>
     companion object {
         private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
         fun create(): ApiService {
