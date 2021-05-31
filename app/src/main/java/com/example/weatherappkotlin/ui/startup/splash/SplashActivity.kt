@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.weatherappkotlin.R
 import com.example.weatherappkotlin.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         supportActionBar?.hide()
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(R.layout.activity_splash)
         animationSplash.setAnimation(R.raw.weather_main)
         animationSplash.playAnimation()
