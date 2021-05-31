@@ -23,9 +23,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
         <TextView
+            android:id="@+id/tvWeatherInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weather Info"
+            android:text="@string/weather_info"
             android:fontFamily="@font/segoe_ui_bold"
             android:gravity="start"
             android:textColor="@color/black_gray"
