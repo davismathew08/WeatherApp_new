@@ -13,6 +13,7 @@
     <string name="tvWindTitle">Wind :</string>
     <string name="tvLocationNameTitle">Location :</string>
     <string name="tvRainTitle">Rain Chance :</string>
+    <string name="weather_info">Weather Info</string>
 
 
 </resources>
