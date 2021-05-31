@@ -6,6 +6,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherappkotlin.R
+import com.example.weatherappkotlin.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.*
 import kotlin.concurrent.timerTask
